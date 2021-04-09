@@ -3,6 +3,7 @@ window.onload=function (){
         let volumeCallback = null;
         let volumeInterval = null;
         let volumeThreshold = 45;
+        let spriteCounter = 0;
         const volumeVisualizer = document.getElementById('volume-visualizer');
         // Initialize
         try {
@@ -38,8 +39,22 @@ window.onload=function (){
                         document.getElementById("sprite").style.setProperty('filter', 'brightness(95%)');
                     }
                     else {
-                        document.getElementById("sprite").src = "spriteOpen.png";
+
                         document.getElementById("sprite").style.setProperty('filter', 'brightness(100%)');
+                        switch(spriteCounter) {
+                            case 0:
+                                document.getElementById("sprite").src = "spriteOpenSmall.png";
+                                break;
+                            case 1:
+                                document.getElementById("sprite").src = "spriteOpen.png";
+                                break;
+                            case 2:
+                                document.getElementById("sprite").src = "spriteOpenBig.png";
+                                break;
+                            default:
+                                document.getElementById("sprite").src = "spriteOpen.png";
+                                break;
+                        }
                     }
                 }
                 else {
@@ -51,6 +66,11 @@ window.onload=function (){
                         document.getElementById("sprite").src = "spriteCoffeeOpen.png";
                         document.getElementById("sprite").style.setProperty('filter', 'brightness(100%)');
                     }
+                }
+
+                spriteCounter = spriteCounter + 1;
+                if (spriteCounter > 3){
+                    spriteCounter = 0;
                 }
 
             };
