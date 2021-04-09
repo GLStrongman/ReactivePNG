@@ -4,8 +4,6 @@ window.onload=function (){
         let volumeInterval = null;
         let volumeThreshold = 45;
         const volumeVisualizer = document.getElementById('volume-visualizer');
-        //const startButton = document.getElementById('start');
-        //const stopButton = document.getElementById('stop');
         // Initialize
         try {
             const audioStream = await navigator.mediaDevices.getUserMedia({
@@ -58,8 +56,7 @@ window.onload=function (){
             };
         } catch(e) {
             console.error('Failed to initialize volume visualizer, simulating instead...', e);
-            // Simulation
-            //TODO remove in production!
+            // Simulate mic
             let lastVolume = 50;
             volumeCallback = () => {
                 const volume = Math.min(Math.max(Math.random() * 100, 0.8 * lastVolume), 1.2 * lastVolume);
@@ -67,8 +64,7 @@ window.onload=function (){
                 volumeVisualizer.style.setProperty('--volume', volume + '%');
             };
         }
-        // Use
         if(volumeCallback !== null && volumeInterval === null)
             volumeInterval = setInterval(volumeCallback, 100);
     })();
-}
+};
