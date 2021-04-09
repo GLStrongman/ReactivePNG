@@ -2,7 +2,7 @@
     background-color: #00b140;
     width: 700px;
     height: 800px;
-    filter: brightness(95%);
+    filter: brightness(90%);
     float: left;
 }
 
@@ -33,7 +33,7 @@
 }
 
 p {
-    font-family: Calibri;
+    font-family: Calibri, serif;
 }
 
 @keyframes speak-now {

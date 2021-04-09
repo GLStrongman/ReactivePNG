@@ -35,7 +35,7 @@ window.onload=function (){
                 document.getElementById("sliderValue").innerText = volumeThreshold;
                 if (currentVolume <= volumeThreshold){
                     document.getElementById("sprite").src = "spriteClosed.png";
-                    document.getElementById("sprite").style.setProperty('filter', 'brightness(95%)');
+                    document.getElementById("sprite").style.setProperty('filter', 'brightness(90%)');
                 }
                 else {
                     document.getElementById("sprite").src = "spriteOpen.png";
