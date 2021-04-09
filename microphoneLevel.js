@@ -34,7 +34,7 @@ window.onload=function (){
                 document.getElementById("sliderValue").innerText = volumeThreshold;
                 let coffeeActive = document.getElementById("coffee").checked;
                 let animatedActive = document.getElementById("animated").checked;
-                if (animatedActive == true) {
+                if (animatedActive === true) {
                     if (currentVolume <= volumeThreshold){
                         document.getElementById("sprite").src = "spriteClosed.png";
                         document.getElementById("sprite").style.setProperty('filter', 'brightness(95%)');
@@ -58,7 +58,7 @@ window.onload=function (){
                         }
                     }
                 }
-                else if (coffeeActive == true) {
+                else if (coffeeActive === true) {
                     if (currentVolume <= volumeThreshold){
                         document.getElementById("sprite").src = "spriteCoffee.png";
                         document.getElementById("sprite").style.setProperty('filter', 'brightness(95%)');

@@ -25,7 +25,7 @@ input.radio {
     float: left;
     clear: none;
     margin: 2px 0 0 2px;
-    font-family: Calibri;
+    font-family: Calibri, serif;
 }
 
 #checkbox {
@@ -46,7 +46,7 @@ input.radio {
 }
 
 p {
-    font-family: Calibri;
+    font-family: Calibri, serif;
 }
 
 @keyframes speak-now {
@@ -61,7 +61,7 @@ div {
     width: 200px;
     height: 20px;
     background-color: #DDD;
-    font-family: Calibri;
+    font-family: Calibri, serif;
 }
 
 div::before {
