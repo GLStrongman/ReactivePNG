@@ -32,6 +32,10 @@
     content:url(spriteOpen.png);
 }
 
+p {
+    font-family: Calibri;
+}
+
 @keyframes speak-now {
     0% { bottom:0px; }
     15% { bottom:10px; }

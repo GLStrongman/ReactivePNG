@@ -33,33 +33,18 @@ window.onload=function (){
                 let currentVolume = averageVolume * (100 / 127);
                 volumeThreshold = document.getElementById("myRange").value;
                 document.getElementById("sliderValue").innerText = volumeThreshold;
-                let spriteType = document.getElementById("coffee").checked;
-                if (spriteType == false) {
-                    if (currentVolume <= volumeThreshold){
-                        document.getElementById("sprite").src = "spriteClosed.png";
-                        document.getElementById("sprite").style.setProperty('filter', 'brightness(95%)');
-                    }
-                    else {
-                        document.getElementById("sprite").src = "spriteOpen.png";
-                        document.getElementById("sprite").style.setProperty('filter', 'brightness(100%)');
-                    }
+                if (currentVolume <= volumeThreshold){
+                    document.getElementById("sprite").src = "spriteClosed.png";
+                    document.getElementById("sprite").style.setProperty('filter', 'brightness(95%)');
                 }
                 else {
-                    if (currentVolume <= volumeThreshold){
-                        document.getElementById("sprite").src = "spriteCoffee.png";
-                        document.getElementById("sprite").style.setProperty('filter', 'brightness(95%)');
-                    }
-                    else {
-                        document.getElementById("sprite").src = "spriteCoffeeOpen.png";
-                        document.getElementById("sprite").style.setProperty('filter', 'brightness(100%)');
-                    }
+                    document.getElementById("sprite").src = "spriteOpen.png";
+                    document.getElementById("sprite").style.setProperty('filter', 'brightness(100%)');
                 }
-
             };
         } catch(e) {
             console.error('Failed to initialize volume visualizer, simulating instead...', e);
-            // Simulation
-            //TODO remove in production!
+            // Simulate volume bar
             let lastVolume = 50;
             volumeCallback = () => {
                 const volume = Math.min(Math.max(Math.random() * 100, 0.8 * lastVolume), 1.2 * lastVolume);
@@ -67,7 +52,6 @@ window.onload=function (){
                 volumeVisualizer.style.setProperty('--volume', volume + '%');
             };
         }
-        // Use
         if(volumeCallback !== null && volumeInterval === null)
             volumeInterval = setInterval(volumeCallback, 100);
     })();
