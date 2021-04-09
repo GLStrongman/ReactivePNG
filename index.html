@@ -12,19 +12,27 @@
     <img id="sprite" src="spriteClosed.png" alt="Uh oh UwU" width="610" height="600">
 </div>
 
-<div id="checkbox">
-    <input type="radio" id="normal" name="sprite" value="normal" checked>
-    <label for="normal">Normal sprite</label>
-    <input type="radio" id="coffee" name="sprite" value="coffee">
-    <label for="coffee">Coffee sprite</label>
+<div id="controlPanel">
+    <h3>Control panel: </h3>
+
+    <div id="checkbox">
+        <input type="radio" id="normal" name="sprite" value="normal" checked>
+        <label for="normal">Normal sprite</label>
+        <input type="radio" id="coffee" name="sprite" value="coffee">
+        <label for="coffee">Coffee sprite</label>
+    </div>
+
+    <div id="volume-visualizer"></div>
+
+    <div id="slidecontainer">
+        <p>Speaking cutoff threshold:</p>
+        <input type="range" min="1" max="100" value="45" class="slider" id="myRange">
+        <p id="sliderValue" style="display:inline">45</p>
+    </div>
 </div>
 
-<div class="slidecontainer">
-    <input type="range" min="1" max="100" value="45" class="slider" id="myRange">
-    <p>Value: </p> <p id="sliderValue">45</p>
-</div>
 
-<div id="volume-visualizer"></div>
+
 
 </body>
 </html>

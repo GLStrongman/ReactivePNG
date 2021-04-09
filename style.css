@@ -3,8 +3,23 @@
     width: 700px;
     height: 800px;
     filter: brightness(95%);
+    float: left;
 }
 
+#controlPanel {
+    width: 200px;
+    height: 200px;
+    float: left;
+    padding: 5px 10px;
+    margin: 0px 5px;
+}
+
+#slidecontainer {
+    width: 200px;
+    height: 50px;
+    position: relative;
+    float: left;
+}
 
 .speaking {
     border-color:rgba(0,0,0,0) !important;
@@ -14,6 +29,10 @@
     animation-fill-mode:forwards;
     filter: brightness(100%);
     content:url(spriteOpen.png);
+}
+
+p {
+    font-family: Calibri;
 }
 
 @keyframes speak-now {
