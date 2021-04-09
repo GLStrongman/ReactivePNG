@@ -32,8 +32,9 @@ window.onload=function (){
                 let currentVolume = averageVolume * (100 / 127);
                 volumeThreshold = document.getElementById("myRange").value;
                 document.getElementById("sliderValue").innerText = volumeThreshold;
-                let spriteType = document.getElementById("coffee").checked;
-                if (spriteType == false) {
+                let coffeeActive = document.getElementById("coffee").checked;
+                let animatedActive = document.getElementById("animated").checked;
+                if (animatedActive == true) {
                     if (currentVolume <= volumeThreshold){
                         document.getElementById("sprite").src = "spriteClosed.png";
                         document.getElementById("sprite").style.setProperty('filter', 'brightness(95%)');
@@ -57,13 +58,24 @@ window.onload=function (){
                         }
                     }
                 }
-                else {
+                else if (coffeeActive == true) {
                     if (currentVolume <= volumeThreshold){
                         document.getElementById("sprite").src = "spriteCoffee.png";
                         document.getElementById("sprite").style.setProperty('filter', 'brightness(95%)');
                     }
                     else {
                         document.getElementById("sprite").src = "spriteCoffeeOpen.png";
+                        document.getElementById("sprite").style.setProperty('filter', 'brightness(100%)');
+                    }
+                }
+
+                else {
+                    if (currentVolume <= volumeThreshold){
+                        document.getElementById("sprite").src = "spriteClosed.png";
+                        document.getElementById("sprite").style.setProperty('filter', 'brightness(95%)');
+                    }
+                    else {
+                        document.getElementById("sprite").src = "spriteOpen.png";
                         document.getElementById("sprite").style.setProperty('filter', 'brightness(100%)');
                     }
                 }

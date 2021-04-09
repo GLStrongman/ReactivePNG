@@ -8,7 +8,7 @@
 
 #controlPanel {
     width: 200px;
-    height: 200px;
+    height: 250px;
     float: left;
     padding: 5px 10px;
     margin: 0px 5px;
@@ -17,6 +17,20 @@
 #slidecontainer {
     width: 200px;
     height: 50px;
+    position: relative;
+    float: left;
+}
+
+input.radio {
+    float: left;
+    clear: none;
+    margin: 2px 0 0 2px;
+    font-family: Calibri;
+}
+
+#checkbox {
+    width: 200px;
+    height: 80px;
     position: relative;
     float: left;
 }
@@ -47,6 +61,7 @@ div {
     width: 200px;
     height: 20px;
     background-color: #DDD;
+    font-family: Calibri;
 }
 
 div::before {
