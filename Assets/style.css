@@ -6,9 +6,18 @@
     float: left;
 }
 
+#logo {
+    width: 200px;
+    height: 70px;
+    float: left;
+    position: relative;
+    clear: both;
+    margin-bottom: 10px;
+}
+
 #controlPanel {
     width: 200px;
-    height: 200px;
+    height: 260px;
     float: left;
     padding: 5px 10px;
     margin: 0px 5px;
@@ -16,11 +25,11 @@
 
 #slidecontainer {
     width: 200px;
-    height: 50px;
+    height: 100px;
     position: relative;
     float: left;
+    clear: both;
 }
-
 
 .speaking {
     border-color:rgba(0,0,0,0) !important;
@@ -29,7 +38,7 @@
     animation-duration: 1s;
     animation-fill-mode:forwards;
     filter: brightness(100%);
-    content:url(spriteOpen.png);
+    content:url(../spriteOpen.png);
 }
 
 p {
