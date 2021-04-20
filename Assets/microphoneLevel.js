@@ -5,6 +5,7 @@ window.onload=function (){
         let volumeCallback = null;
         let volumeInterval = null;
         let volumeThreshold = 45;
+        let frameCount = 3;
         let spriteCounter = 0;
         const volumeVisualizer = document.getElementById('volume-visualizer');
         
@@ -33,7 +34,9 @@ window.onload=function (){
                 volumeVisualizer.style.setProperty('--volume', (averageVolume * 100 / 127) + '%');
                 let currentVolume = averageVolume * (100 / 127);
                 volumeThreshold = document.getElementById("myRange").value;
+                frameCount = document.getElementById("framesRange").value;
                 document.getElementById("sliderValue").innerText = volumeThreshold;
+                document.getElementById("sliderValueFrames").innerText = frameCount;
                 let coffeeActive = document.getElementById("coffee").checked;
                 let animatedActive = document.getElementById("animated").checked;
                 if (animatedActive === true) {
@@ -83,7 +86,7 @@ window.onload=function (){
                 }
 
                 spriteCounter = spriteCounter + 1;
-                if (spriteCounter > 3){
+                if (spriteCounter > frameCount-1){
                     spriteCounter = 0;
                 }
 

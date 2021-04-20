@@ -17,7 +17,7 @@
 
 #controlPanel {
     width: 200px;
-    height: 260px;
+    height: 370px;
     float: left;
     padding: 5px 10px;
     margin: 0px 5px;
@@ -25,7 +25,15 @@
 
 #slidecontainer {
     width: 200px;
-    height: 100px;
+    height: 80px;
+    position: relative;
+    float: left;
+    clear: both;
+}
+
+#frameslidecontainer {
+    width: 200px;
+    height: 80px;
     position: relative;
     float: left;
     clear: both;
@@ -40,7 +48,7 @@ input.radio {
 
 #checkbox {
     width: 200px;
-    height: 80px;
+    height: 70px;
     position: relative;
     float: left;
 }
