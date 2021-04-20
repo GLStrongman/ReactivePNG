@@ -1,3 +1,5 @@
+// Original microphone control code taken from StackOverflow, written by user 'Minding' and modified by me
+
 window.onload=function (){
     (async () => {
         let volumeCallback = null;
@@ -5,7 +7,7 @@ window.onload=function (){
         let volumeThreshold = 45;
         let spriteCounter = 0;
         const volumeVisualizer = document.getElementById('volume-visualizer');
-        // Initialize
+        
         try {
             const audioStream = await navigator.mediaDevices.getUserMedia({
                 audio: {
