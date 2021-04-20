@@ -6,6 +6,15 @@
     float: left;
 }
 
+#logo {
+    width: 200px;
+    height: 70px;
+    float: left;
+    position: relative;
+    clear: both;
+    margin-bottom: 10px;
+}
+
 #controlPanel {
     width: 200px;
     height: 250px;
@@ -16,9 +25,10 @@
 
 #slidecontainer {
     width: 200px;
-    height: 50px;
+    height: 100px;
     position: relative;
     float: left;
+    clear: both;
 }
 
 input.radio {
@@ -42,7 +52,7 @@ input.radio {
     animation-duration: 1s;
     animation-fill-mode:forwards;
     filter: brightness(100%);
-    content:url(spriteOpen.png);
+    content:url(../spriteOpen.png);
 }
 
 p {
