@@ -16,8 +16,38 @@
     <div id="logo">
         <img src="Assets/logo.png" alt="PNGTubie" width="200" height="70">
     </div>
+
     <h3>Control panel: </h3>
+
     <div id="volume-visualizer"></div>
+
+    <div id="checkbox">
+        <table>
+            <thead></thead>
+            <tbody>
+            <tr>
+                <td>
+                    <input type="radio" id="normal" name="sprite" value="normal" checked>
+                    <label for="normal">Normal sprite</label> <br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" id="coffee" name="sprite" value="coffee">
+                    <label for="coffee">Other sprite</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" id="animated" name="sprite" value="animated" checked>
+                    <label for="normal">Animated sprite</label>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+
     <div id="slidecontainer">
         <p>Speaking cutoff threshold:</p>
         <input type="range" min="1" max="100" value="45" class="slider" id="myRange">
