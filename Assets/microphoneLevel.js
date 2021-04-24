@@ -5,6 +5,7 @@ window.onload=function (){
         let volumeCallback = null;
         let volumeInterval = null;
         let volumeThreshold = 45;
+        let brightnessValue = 95;
         //let frameCount = 3;
         let spriteCounter = 0;
         const volumeVisualizer = document.getElementById('volume-visualizer');
@@ -34,15 +35,17 @@ window.onload=function (){
                 volumeVisualizer.style.setProperty('--volume', (averageVolume * 100 / 127) + '%');
                 let currentVolume = averageVolume * (100 / 127);
                 volumeThreshold = document.getElementById("myRange").value;
+                brightnessValue = document.getElementById("pngBrightness").value;
                 // frameCount = document.getElementById("framesRange").value;
                 document.getElementById("sliderValue").innerText = volumeThreshold;
+                document.getElementById("brightnessDisplay").innerText = brightnessValue;
                 // document.getElementById("sliderValueFrames").innerText = frameCount;
                 // let coffeeActive = document.getElementById("coffee").checked;
                 let animatedActive = document.getElementById("animated").checked;
                 if (animatedActive === true) {
                     if (currentVolume <= volumeThreshold){
                         document.getElementById("sprite").src = "spriteClosed.png";
-                        document.getElementById("sprite").style.setProperty('filter', 'brightness(95%)');
+                        document.getElementById("sprite").style.setProperty('filter', 'brightness(' + brightnessValue + '%)');
                     }
                     else {
                         document.getElementById("sprite").style.setProperty('filter', 'brightness(100%)');
@@ -75,7 +78,7 @@ window.onload=function (){
                 else {
                     if (currentVolume <= volumeThreshold){
                         document.getElementById("sprite").src = "spriteClosed.png";
-                        document.getElementById("sprite").style.setProperty('filter', 'brightness(95%)');
+                        document.getElementById("sprite").style.setProperty('filter', 'brightness(' + brightnessValue + '%)');
                     }
                     else {
                         document.getElementById("sprite").src = "spriteOpen.png";
