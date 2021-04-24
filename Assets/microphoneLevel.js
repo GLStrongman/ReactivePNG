@@ -25,13 +25,14 @@ window.onload=function (){
             analyser.smoothingTimeConstant = 0.4;
             audioSource.connect(analyser);
             const volumes = new Uint8Array(analyser.frequencyBinCount);
+
+            // Main loop
             volumeCallback = () => {
                 analyser.getByteFrequencyData(volumes);
                 let volumeSum = 0;
                 for(const volume of volumes)
                     volumeSum += volume;
                 const averageVolume = volumeSum / volumes.length;
-                // Value range: 127 = analyser.maxDecibels - analyser.minDecibels;
                 volumeVisualizer.style.setProperty('--volume', (averageVolume * 100 / 127) + '%');
                 let currentVolume = averageVolume * (100 / 127);
                 volumeThreshold = document.getElementById("myRange").value;
@@ -41,6 +42,8 @@ window.onload=function (){
                 document.getElementById("brightnessDisplay").innerText = brightnessValue;
                 // document.getElementById("sliderValueFrames").innerText = frameCount;
                 // let coffeeActive = document.getElementById("coffee").checked;
+
+                // Image display handling
                 let animatedActive = document.getElementById("animated").checked;
                 if (animatedActive === true) {
                     if (currentVolume <= volumeThreshold){
@@ -90,6 +93,13 @@ window.onload=function (){
                 if (spriteCounter > 3){
                     spriteCounter = 0;
                 }
+
+                // Background handling
+                let blueBack = document.getElementById("blue").checked;
+                let magBack = document.getElementById("magenta").checked;
+                if (blueBack === true) { document.getElementById("avatarBox").style.setProperty('background-color', '#0033cc'); }
+                else if (magBack === true) { document.getElementById("avatarBox").style.setProperty('background-color', '#FF00FF'); }
+                else { document.getElementById("avatarBox").style.setProperty('background-color', '#00b140'); }
 
             };
         } catch(e) {

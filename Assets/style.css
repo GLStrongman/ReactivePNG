@@ -61,6 +61,13 @@ input.radio {
     float: left;
 }
 
+#backgroundCheckbox {
+    width: 200px;
+    height: 70px;
+    position: relative;
+    float: left;
+}
+
 .speaking {
     border-color:rgba(0,0,0,0) !important;
     position:relative;
