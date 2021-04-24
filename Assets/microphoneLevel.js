@@ -5,6 +5,7 @@ window.onload=function (){
         let volumeCallback = null;
         let volumeInterval = null;
         let volumeThreshold = 45;
+        let brightnessValue = 95;
         //let frameCount = 3;
         let spriteCounter = 0;
         const volumeVisualizer = document.getElementById('volume-visualizer');
@@ -24,25 +25,30 @@ window.onload=function (){
             analyser.smoothingTimeConstant = 0.4;
             audioSource.connect(analyser);
             const volumes = new Uint8Array(analyser.frequencyBinCount);
+
+            // Main loop
             volumeCallback = () => {
                 analyser.getByteFrequencyData(volumes);
                 let volumeSum = 0;
                 for(const volume of volumes)
                     volumeSum += volume;
                 const averageVolume = volumeSum / volumes.length;
-                // Value range: 127 = analyser.maxDecibels - analyser.minDecibels;
                 volumeVisualizer.style.setProperty('--volume', (averageVolume * 100 / 127) + '%');
                 let currentVolume = averageVolume * (100 / 127);
                 volumeThreshold = document.getElementById("myRange").value;
+                brightnessValue = document.getElementById("pngBrightness").value;
                 // frameCount = document.getElementById("framesRange").value;
                 document.getElementById("sliderValue").innerText = volumeThreshold;
+                document.getElementById("brightnessDisplay").innerText = brightnessValue;
                 // document.getElementById("sliderValueFrames").innerText = frameCount;
                 // let coffeeActive = document.getElementById("coffee").checked;
+
+                // Image display handling
                 let animatedActive = document.getElementById("animated").checked;
                 if (animatedActive === true) {
                     if (currentVolume <= volumeThreshold){
                         document.getElementById("sprite").src = "spriteClosed.png";
-                        document.getElementById("sprite").style.setProperty('filter', 'brightness(95%)');
+                        document.getElementById("sprite").style.setProperty('filter', 'brightness(' + brightnessValue + '%)');
                     }
                     else {
                         document.getElementById("sprite").style.setProperty('filter', 'brightness(100%)');
@@ -75,7 +81,7 @@ window.onload=function (){
                 else {
                     if (currentVolume <= volumeThreshold){
                         document.getElementById("sprite").src = "spriteClosed.png";
-                        document.getElementById("sprite").style.setProperty('filter', 'brightness(95%)');
+                        document.getElementById("sprite").style.setProperty('filter', 'brightness(' + brightnessValue + '%)');
                     }
                     else {
                         document.getElementById("sprite").src = "spriteOpen.png";
@@ -87,6 +93,13 @@ window.onload=function (){
                 if (spriteCounter > 3){
                     spriteCounter = 0;
                 }
+
+                // Background handling
+                let blueBack = document.getElementById("blue").checked;
+                let magBack = document.getElementById("magenta").checked;
+                if (blueBack === true) { document.getElementById("avatarBox").style.setProperty('background-color', '#0033cc'); }
+                else if (magBack === true) { document.getElementById("avatarBox").style.setProperty('background-color', '#FF00FF'); }
+                else { document.getElementById("avatarBox").style.setProperty('background-color', '#00b140'); }
 
             };
         } catch(e) {

@@ -17,13 +17,13 @@
 
 #controlPanel {
     width: 200px;
-    height: 300px;
+    height: 440px;
     float: left;
     padding: 5px 10px;
     margin: 0px 5px;
 }
 
-#slidecontainer {
+#slideContainer {
     width: 200px;
     height: 80px;
     position: relative;
@@ -31,7 +31,15 @@
     clear: both;
 }
 
-#frameslidecontainer {
+#brightnessSlide {
+    width: 200px;
+    height: 80px;
+    position: relative;
+    float: left;
+    clear: both;
+}
+
+#frameSlideContainer {
     width: 200px;
     height: 80px;
     position: relative;
@@ -46,7 +54,14 @@ input.radio {
     font-family: Calibri, serif;
 }
 
-#checkbox {
+#displayCheckbox {
+    width: 200px;
+    height: 70px;
+    position: relative;
+    float: left;
+}
+
+#backgroundCheckbox {
     width: 200px;
     height: 70px;
     position: relative;
